@@ -51,20 +51,20 @@ $(document).ready(function () {
       }
 })
 $("#submit-form").submit((e)=>{
-    e.preventDefault()
-    $.ajax({
-        url:"https://script.google.com/macros/s/AKfycbzMZJRoeSpWJTl2rv5t1vPesj4x1J7zjod528JS/exec",
-        data:$("#submit-form").serialize(),
-        method:"post",
-        success:function (response){
-            alert("Form submitted successfully")
-            window.location.reload()
-            //window.location.href="https://google.com"
-        },
-        error:function (err){
-            alert("Something Error")
+  e.preventDefault()
+  $.ajax({
+      url:"https://script.google.com/macros/s/AKfycbzGXaZD6VX_c77jf1PhgYK7I52B1wVVmh0eZxi8FA/exec",
+      data:$("#submit-form").serialize(),
+      method:"post",
+      success:function (response){
+          alert("Form submitted successfully")
+          // window.location.reload()
+          window.location.href="https://arun-asv.github.io/Mine/"
+      },
+      error:function (err){
+          alert("Something Error")
 
-        }
-    })
+      }
+  })
 })
 })
