@@ -466,7 +466,7 @@ xclip
     display: block;
     position: relative;
     overflow: hidden;
-    padding: 70px 0;
+    padding: 70px 0 20px 0;
 }
 
 .noover {
@@ -2130,7 +2130,7 @@ select.mobile-device {
     font-weight: 400;
     font-size: 20px;
     text-transform: capitalize;
-    line-height: !important;
+    line-height: important;
 }
 
 .footer {
@@ -2347,7 +2347,7 @@ select.mobile-device {
     position: fixed;
     bottom: -100px;
     border-radius: 3px;
-    right: 50px;
+    right: 10px;
     text-align: center;
     font-size: 28px;
     color: #ffffff !important;
@@ -2379,7 +2379,7 @@ select.mobile-device {
     color: #999 !important;
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 1 !important:
+    line-height: 1 !important;
 }
 
 .stat-wrap p {
@@ -2388,7 +2388,7 @@ select.mobile-device {
     margin: 0;
     font-weight: 300;
     padding: 4px 0 0;
-    line-height: 1 !important:
+    line-height: 1 !important;
 }
 
 #preloader {
