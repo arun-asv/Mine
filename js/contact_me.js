@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-  var nflag=1,eflag=1,mflag=1
+  var nflag=1,eflag=1,mflag=1,msgflag=1
   $("#fname").blur(function () {
     var text = $(this).val()
     if (text.length < 4) {
@@ -11,7 +11,7 @@ $(document).ready(function () {
     else {
       $("#error1").hide()
       nflag=0
-      if(eflag==0 && mflag==0){
+      if(eflag==0 && mflag==0 && msgflag==0){
         $("#btn").attr('disabled', false)
       }
     }
@@ -27,7 +27,7 @@ $(document).ready(function () {
     else {
       $("#error3").hide()
       eflag=0
-      if(nflag==0 && mflag==0){
+      if(nflag==0 && mflag==0 && msgflag==0){
         $("#btn").attr('disabled', false)
       }
     }
@@ -38,7 +38,7 @@ $(document).ready(function () {
       if (/^[0-9]+$/.test(text) == true) {
         $("#error4").hide()
         mflag=0
-        if(eflag==0 && nflag==0){
+        if(eflag==0 && nflag==0 && msgflag==0){
         $("#btn").attr('disabled', false)}
        
       }
@@ -50,6 +50,40 @@ $(document).ready(function () {
   
       }
 })
+$("#message").blur(function () {
+  var text = $(this).val()
+  if (text.length < 4) {
+    $("#error5").show()
+    msgflag=1
+    $("#btn").attr('disabled', true)
+  }
+  else {
+    $("#error5").hide()
+    msgflag=0
+    if(eflag==0 && mflag==0 && nflag==0){
+      $("#btn").attr('disabled', false)
+    }
+  }
+})
+$("#btn").hover(function(){
+  var name=$("#fname").val()
+  if(name.length==0){
+    $("#error1").show()
+  }
+  var email=$("#emailaddress").val()
+  if(email.length==0){
+    $("#error3").show()
+  }
+  var phone=$("#mnumber").val()
+  if(phone.length==0){
+  $("#error4").show()
+  }
+  var msg=$("#message").val()
+  if(msg.length==0){
+  $("#error5").show()
+  }
+})
+
 $("#submit-form").submit((e)=>{
   e.preventDefault()
   $.ajax({
